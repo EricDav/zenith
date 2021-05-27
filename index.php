@@ -900,7 +900,7 @@
                               Green World Rainbow Green World <br>
                               T. +44 7441449170 <br>
                               T. (209) 771-4803 <br>
-                              E. contact@zenithlogisticservices.com <br>
+                              E. <?=$email?> <br>
                               <div class="divider-single"></div>
                            </div>
                         </div>
@@ -910,7 +910,7 @@
                            <h3>About Us</h3>
                            <div class="tiny-border"></div>
                            <div class="textwidget">
-                              <p>At Zenith Logistics Service, we аrе making research continuously аnd improving оur ѕеrvісеѕ to thе hіghеѕt ѕtаndаrdѕ. Wе оffеr dіffеrеnt ѕеrvісеs rаngіng frоm logistics, warehousing, cargo, transport and other related services..</p>
+                              <p>At Zed Logistics Services, we аrе making research continuously аnd improving оur ѕеrvісеѕ to thе hіghеѕt ѕtаndаrdѕ. Wе оffеr dіffеrеnt ѕеrvісеs rаngіng frоm logistics, warehousing, cargo, transport and other related services..</p>
                               <a class="btn-border-light" href="#">About Us</a>
                            </div>
                         </div>
@@ -922,7 +922,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12 text-center">
-                        Copyright 2021 - Zenith Logistic Services  
+                        Copyright 2021 - Zed Logistic Services  
                      </div>
                   </div>
                </div>

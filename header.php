@@ -13,8 +13,8 @@
                      <!-- logo begin -->
                      <div id="logo">
                         <div class="inner">
-                           <a href="https://www.zenithlogisticservices.com/">
-                           <img src="https://www.zenithlogisticservices.com/wp-content/uploads/2021/04/loo-e1619015681521.jpg" alt="Zenith Logistics Service" class="logo-1">                                <img src="https://www.zenithlogisticservices.com/wp-content/uploads/2021/04/loo-e1619015681521.jpg" alt="Zenith Logistics Service" class="logo-2">    
+                           <a style="font-size: 20px; font-weight: 800;" href="/">
+                                 Zed Logistic Services
                            </a>
                         </div>
                      </div>
