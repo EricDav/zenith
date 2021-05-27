@@ -1,10 +1,9 @@
 <?php
     $url = explode('?', $_SERVER['REQUEST_URI'])[0];
-
+    $subPath = $_SERVER['HTTP_HOST'] == 'localhost:8888' ? '/shipping' : '';
     $websiteName = 'Zed Logistic';
     $email = 'info@zedlogisticservices.com';
     $phoneNumber = '';
-
 
     if ($url == '/about') {
         include 'about.php';

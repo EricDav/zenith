@@ -98,7 +98,7 @@
       <link rel="shortlink" href="https://www.zenithlogisticservices.com/">
       <link rel="alternate" type="application/json+oembed" href="https://www.zenithlogisticservices.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.zenithlogisticservices.com%2F">
       <link rel="alternate" type="text/xml+oembed" href="https://www.zenithlogisticservices.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.zenithlogisticservices.com%2F&amp;format=xml">
-      <link rel="stylesheet" href="/zenith/font/css/all.css">
+      <link rel="stylesheet" href="<?=$subPath . '/font/css/all.css' ?>">
       <meta name="framework" content="Redux 4.1.26">
       <style type="text/css">     
          /* 01 MAIN STYLES
