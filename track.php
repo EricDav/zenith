@@ -167,7 +167,7 @@ $('#submit-tracking').click(function() {
     $('#submit-tracking').css('cursor', 'default');
     $('#submit-tracking').val('Loading..');
     $('#loader-btn').show();
-    $.ajax('https://admin.rapidglobalogistic.com/get-shipmentInfo', { data: {tracking_number: trackingNumber},
+    $.ajax('https://admin.zedlogisticservices.com/get-shipmentInfo', { data: {tracking_number: trackingNumber},
     type: 'POST',  success: function(result) {
         $('#submit-tracking').css('disabled', false);
         $('#loader-btn').hide();
