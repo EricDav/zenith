@@ -254,12 +254,12 @@
                                  <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
                                        <div id="search-container" data-wow-duration="1s" data-wow-delay="0s" class="cta-form wow fadeIn" style="visibility: visible; animation-duration: 1s; animation-delay: 0s; animation-name: fadeIn;">
-                                          <form role="search" method="POST" id="searchform" name="trackform">
+                                          
                                              <input type="text" value="" name="s" id="s" placeholder="Insert tracking number here...">
-                                             <input type="submit" onclick="return IsEmpty();" value="TRACK IT" name="submit"> 
-                                             <img class="ajax-loader" src="https://www.zenithlogisticservices.com/wp-content/plugins/gocargo-shipment/include/admin/assets/images/loader.gif" alt="Sending ...">
+                                             <input type="submit" onclick="track()" value="TRACK IT" name="submit"> 
+
                                              <input type="hidden" name="post_type" value="gocargo_shipment"> 
-                                          </form>
+                                          
                                           <div class="clearfix"></div>
                                        </div>
                                     </div>
@@ -932,5 +932,10 @@
       </div>
       <!-- #wrapper -->
       <?php include 'script.php'; ?>
+      <script>
+         function track() {
+            window.location = '/track';
+         }
+      </script>
    </body>
 </html>
