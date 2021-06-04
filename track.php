@@ -74,7 +74,7 @@
                                           <div style="font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center; height: 40px; background-color: #D03232; margin-top: 20px; color: #fff;">Shipping Information</div>
                                           <table id="to1" style="width:100%; color: #000; margin-top: 20px; background-color: #fff; ">
                                              <tr>
-                                               <th>Ship Date</th>
+                                               <th>Shipping Date</th>
                                                <th id="ship-date">6th April 2016</th>
                                              </tr>
                                              <tr>
@@ -113,7 +113,7 @@
                                                <th>Weight</th>
                                              </tr>
                                              <tr>
-                                               <td id="ship-content">Shioper's Name</td>
+                                               <td id="ship-content">Shiper's Name</td>
                                                <td id="delivery-weight">Unspecified</td>
                                              </tr>
                                            </table>
@@ -130,8 +130,53 @@
                                              </tr>
                                            </table>
                                     </div>
-                                    <div style="margin-top: 20px;" id="history" class="col-sm-12">
-                                       <!-- <div class="col-sm-12" style="height: 40px; display: flex; align-items: center; justify-content: left; font-size: 17px; font-weight: 700; background-color: #E8A317; color: #fff; margin-top: 20px;">Delivery Information</div> -->
+                                    <div style="margin-top: 20px; display: block;" id="history" class="col-sm-12">
+                                    <div class="wrapper-line padding40 rounded10">
+                                    <h4 style="color: #fff; font-size: 20px; font-weight: 700;" class="head">Shipment Progress</h4>
+	<ul class="progress">
+		<li>Accepted</li>
+		<li class="beforeactive">Order Processing</li>
+		<li class="active">Shipment Pending</li>
+		<li>Estimated Delivery</li>
+	</ul>
+	<div class="divider-double"></div>
+	<ul id="history-m" class="timeline custom-tl">
+		<li class="timeline-inverted">
+			<div data-wow-delay=".2s" class="timeline-date wow zoomIn" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">Nov 03, 2015<span>22:07 pm</span>
+			</div>
+			<div class="timeline-badge success">
+				<i class="fa fa-check-square-o wow zoomIn" style="visibility: visible; animation-name: zoomIn;"></i>
+			</div>
+			<div data-wow-delay=".6s" class="timeline-panel wow fadeInRight" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
+				<div class="timeline-body"> The shipment has been successfully delivered <span class="location">Baker Street, UK                          
+						<a class="popup-gmaps" href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom">view on map</a>
+					</span>
+				</div>
+			</div>
+      </li>
+      
+		<li class="timeline-inverted">
+			<div data-wow-delay=".2s" class="timeline-date wow zoomIn" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">
+                                        Nov 03, 2015                                        
+				<span>20:07 pm</span>
+			</div>
+			<div class="timeline-badge warning">
+				<i class="fa fa-exclamation-triangle wow zoomIn" style="visibility: visible; animation-name: zoomIn;"></i>
+			</div>
+			<div data-wow-delay=".6s" class="timeline-panel wow fadeInRight" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
+				<div class="timeline-body">
+                                            The shipment could not be delivered                                            
+					<span class="location">Baker Street, UK 
+                                                
+						<a class="popup-gmaps" href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom">view on map</a>
+					</span>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div class="divider-double"></div>
+</div>
+
                                     </div>
                                     
                                  </div>
@@ -155,11 +200,24 @@
       <?php include 'script.php'; ?>
       <script>
 
+function getIcon(status) {
+   if (status == 1) {
+      return '<div class="timeline-badge"><i class="fa fa-plane wow zoomIn" style="visibility: visible; animation-name: zoomIn; margin-top: 15px;"></i></div>';
+   }
+
+   if (status == 2) {
+      return '<div class="timeline-badge warning"><i class="fa fa-exclamation-triangle wow zoomIn" style="visibility: visible; animation-name: zoomIn; margin-top: 15px;"></i></div>';
+   }
+
+   if (status == 3) {
+      return '<div class="timeline-badge success"><i class="fa fa-check wow zoomIn" style="visibility: visible; animation-name: zoomIn; margin-top: 15px;"></i></div>';
+   }
+}
 $('#submit-tracking').click(function() {
     $('#shipment').hide();
     const trackingNumber = $('#tracking-number').val();
     console.log(trackingNumber);
-    if (!trackingNumber || trackingNumber.length != 10) {
+    if (!trackingNumber || trackingNumber.length != 15) {
         return;
     }
 
@@ -180,11 +238,11 @@ $('#submit-tracking').click(function() {
             const data = response.data
             let history = {};
             let date;
-            
+            data.history.reverse();
             data.history.forEach(function(item) {
                 date = item.date_created.split(' ')[0];
                 if (date in history) {
-                    history[date].push(item)
+                    history[date].push(item);
                 } else {
                     history[date] = [item];
                 }
@@ -203,18 +261,23 @@ $('#submit-tracking').click(function() {
             $('#delivery-weight').text(data.shipment.weight);
             $('#delivery-type').text(data.shipment.type);
             $('#delivery-address').text(data.shipment.receiver_address);
-            const $history = $('#history');
+            const $history = $('#history-m');
             $history.empty();
-            $history.append('<h4 style="color: #fff; font-size: 20px; font-weight: 700;" class="head">Shipment Progress</h4>');
+            // $('#history').append('<h4 style="color: #fff; font-size: 20px; font-weight: 700;" class="head">Shipment Progress</h4>');
             $('#trackingId').text('Tracking Number:   ' + trackingNumber);
             let html;
             if (data.history) {
                 for (let key in history) {
                     dateHistory = history[key];
-                    $history.append('<div class="col-sm-12" style="height: 30px; display: flex; align-items: center; justify-content: left; font-size: 17px; font-weight: 700; background-color: #E8A317; color: #000; margin-top: 20px;">' + key + '</div>');
+                    
+                    // $history.append('<div class="col-sm-12" style="height: 30px; display: flex; align-items: center; justify-content: left; font-size: 17px; font-weight: 700; background-color: #E8A317; color: #000; margin-top: 20px;">' + key + '</div>');
                     dateHistory.forEach((item) => {
-                        html = '<div><span style="color: #000; font-size: 15px; display: inline-block; width: 100%; background-color: #fff" id="delivery-date">- ' + item.description + '</span></div>';
-                        $history.append(html);
+                        $historyHtml = '<li class="timeline-inverted"><div data-wow-delay=".2s" class="timeline-date wow zoomIn" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">' + new Date(item.date_created).toDateString() + '<span></span></div>';
+			               $historyHtml += getIcon(item.status);
+			               $historyHtml += '<div data-wow-delay=".6s" class="timeline-panel wow fadeInRight" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">';
+                        $historyHtml += '<div class="timeline-body">' +  item.description + '<span class="location">' + item.location +  '<a class="popup-gmaps" href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom">view on map</a></span>';
+                        $historyHtml += '</div></div></li>';
+                        $history.append($historyHtml);
                     });
                 }
             } else {
