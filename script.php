@@ -4,6 +4,17 @@
       <script type="text/javascript">				
       </script>
       </div>
+          <!-- jquery latest version -->
+    <!-- ConveyThis button: -->
+<div id="conveythis-wrapper-main"><a href="https://www.conveythis.com" class="conveythis-no-translate notranslate" title="ConveyThis" >ConveyThis</a></div>
+<script src="//s2.conveythis.com/javascriptClassic/1/conveythis.js"></script>
+<script src="//s2.conveythis.com/javascriptClassic/1/translate.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(e) {
+conveythis.init({source_language_id: 703, languages: [{"id":"703","active":true},{"id":"741","active":false},{"id":"743","active":false},{"id":"745","active":false},{"id":"804","active":false},{"id":"805","active":false},{"id":"747","active":false},{"id":"751","active":false},{"id":"753","active":false},{"id":"756","active":false},{"id":"758","active":false},{"id":"760","active":false},{"id":"766","active":false},{"id":"771","active":false},{"id":"772","active":false},{"id":"797","active":false},{"id":"815","active":false},{"id":"784","active":false},{"id":"777","active":false},{"id":"704","active":false},{"id":"706","active":false},{"id":"707","active":false},{"id":"709","active":false},{"id":"710","active":false},{"id":"714","active":false},{"id":"796","active":false},{"id":"720","active":false},{"id":"721","active":false},{"id":"723","active":false},{"id":"703","active":false},{"id":"801","active":false},{"id":"734","active":false},{"id":"736","active":false}]})
+});
+</script>
+<!-- End ConveyThis button code. -->
       <script type="text/javascript">
          window.jQuery = window.$ = jQuery;  
          (function($) { "use strict";                
