@@ -14,7 +14,7 @@
                      <div id="logo">
                         <div class="inner">
                            <a style="font-size: 20px; font-weight: 800;" href="/">
-                                 Zed Logistic Services
+                              Zenith Express Logistics
                            </a>
                         </div>
                      </div>

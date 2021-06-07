@@ -14,26 +14,26 @@
     } else if ($url == '/track') {
         include 'track.php';
         exit;
-    } else if ($url == '/all-services') {
-        include './services/all.php';
+    } else if ($url == '/services') {
+        include 'all.php';
         exit;
     } else if ($url == '/services/domestic-delivery') {
-        include './services/demesticDelivery.php';
+        include 'demesticDelivery.php';
         exit;
     } else if ($url == '/services/worldwide-delivery') {
-        include './services/worldWide.php';
+        include 'worldWide.php';
         exit;
     } else if ($url == '/services/ocean-freight') {
-        include './services/oceanFrieght.php';
+        include 'oceanFrieght.php';
         exit;
     } else if ($url == '/services/logistic') {
-        include './services/logistic.php';
+        include 'logistic.php';
         exit;
     } else if ($url == '/services/sameday') {
-        include './services/sameDay.php';
+        include 'sameDay.php';
         exit;
     } else if ($url == '/services/air-fright') {
-        include './services/airfright.php';
+        include 'airfright.php';
         exit;
     }
 
@@ -138,7 +138,7 @@
 
 							-->
                                                 <rs-layer id="slider-1-slide-6-layer-3" class="custom-font-1" data-type="text" data-color="#ffffff" data-rsp_ch="on" data-xy="x:20px;y:235px;" data-text="s:56;l:22;fw:700;" data-frame_0="x:50px;" data-frame_1="e:easeInOutCubic;st:1000;sp:800;"
-                                                    data-frame_999="x:50px;o:0;e:nothing;st:w;" style="z-index:7;font-family:Montserrat;">ZENITH LOGISTICS
+                                                    data-frame_999="x:50px;o:0;e:nothing;st:w;" style="z-index:7;font-family:Montserrat;">ZENITH EXPRESS LOGISTICS
                                                 </rs-layer>
                                                 <!--
 
@@ -910,7 +910,7 @@
                            <h3>About Us</h3>
                            <div class="tiny-border"></div>
                            <div class="textwidget">
-                              <p>At Zed Logistics Services, we аrе making research continuously аnd improving оur ѕеrvісеѕ to thе hіghеѕt ѕtаndаrdѕ. Wе оffеr dіffеrеnt ѕеrvісеs rаngіng frоm logistics, warehousing, cargo, transport and other related services..</p>
+                              <p>At Zenith Express Logistics Services, we аrе making research continuously аnd improving оur ѕеrvісеѕ to thе hіghеѕt ѕtаndаrdѕ. Wе оffеr dіffеrеnt ѕеrvісеs rаngіng frоm logistics, warehousing, cargo, transport and other related services..</p>
                               <a class="btn-border-light" href="#">About Us</a>
                            </div>
                         </div>
@@ -922,7 +922,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12 text-center">
-                        Copyright 2021 - Zed Logistic Services  
+                        Copyright 2021 - Zenith Express Logistic Services  
                      </div>
                   </div>
                </div>
