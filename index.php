@@ -899,6 +899,7 @@
                               Somewhere Over Rainbow <br>
                               Green World Rainbow Green World <br>
                               T. +44 78831 63806 <br>
+                              T.  +1 (347) 850-6810 <br>
                               E. <?=$email?> <br>
                               <div class="divider-single"></div>
                            </div>
