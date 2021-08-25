@@ -78,7 +78,7 @@
                                                <th id="ship-date">6th April 2016</th>
                                              </tr>
                                              <tr>
-                                               <td>Shioper's Name</td>
+                                               <td>Shipper's Name</td>
                                                <td id="ship-name">Dare</td>
                                              </tr>
                                              <tr>
